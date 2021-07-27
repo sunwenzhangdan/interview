@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-05-11 07:32:19
  * @LastEditors: seven sun
- * @LastEditTime: 2021-05-19 16:35:45
+ * @LastEditTime: 2021-07-19 11:19:01
  * @FilePath: /面试题/gobase/datastruct/linertable/linetable.go
  */
 package linertable
@@ -278,6 +278,6 @@ func Pratition(slicex []int, start, end int) int {
 		}
 
 	}
-	slicex[start], slicex[i] = slicex[i], slicex[start]
+	slicex[start], slicex[i] = slicex[i], sicex[start]
 	return i
 }
