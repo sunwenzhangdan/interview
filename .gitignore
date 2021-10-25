@@ -1,3 +1,61 @@
 .DS_Store
 .vscode
 .git
+
+	ID            int32  `protobuf:"varint,1,opt,name=ID,proto3" json:"id,omitempty"`
+	ModelType     string `protobuf:"bytes,2,opt,name=ModelType,proto3" json:"mt,omitempty"`
+	OS            string `protobuf:"bytes,3,opt,name=OS,proto3" json:"os,omitempty"`
+	Bit           string `protobuf:"bytes,4,opt,name=Bit,proto3" json:"bit,omitempty"`
+	Channel       string `protobuf:"bytes,5,opt,name=Channel,proto3" json:"channel,omitempty"`
+	ClientVersion string `protobuf:"bytes,6,opt,name=ClientVersion,proto3" json:"client_version,omitempty"`
+	WeightValue   int32  `protobuf:"varint,7,opt,name=WeightValue,proto3" json:"weight,omitempty"`
+	Url           string `protobuf:"bytes,8,opt,name=Url,proto3" json:"Url,omitempty"`
+	UrlAnti       string `protobuf:"bytes,9,opt,name=UrlAnti,proto3" json:"UrlAnti,omitempty"`
+	BaseUrl       string `protobuf:"bytes,10,opt,name=BaseUrl,proto3" json:"BaseUrl,omitempty"`
+	Opt           string `protobuf:"bytes,11,opt,name=Opt,proto3" json:"opt,omitempty"`
+	VersionTo     string `protobuf:"bytes,12,opt,name=VersionTo,proto3" json:"version_to,omitempty"`
+	ForceUpgrade  int32  `protobuf:"varint,13,opt,name=ForceUpgrade,proto3" json:"ForceUpgrade,omitempty"`
+	Note          string `protobuf:"bytes,14,opt,name=Note,proto3" json:"note,omitempty"`
+	StartAt       string `protobuf:"bytes,15,opt,name=StartAt,proto3" json:"start_at,omitempty"`
+	EndAt         string `protobuf:"bytes,16,opt,name=EndAt,proto3" json:"end_at,omitempty"`
+	LimitNum      int32  `protobuf:"varint,17,opt,name=LimitNum,proto3" json:"limit_num,omitempty"`
+	GroupName     string `protobuf:"bytes,18,opt,name=GroupName,proto3" json:"group_name,omitempty"`
+	CfgName       string `protobuf:"bytes,19,opt,name=CfgName,proto3" json:"cfg_name,omitempty"`
+	UniqId        string `protobuf:"bytes,20,opt,name=UniqId,proto3" json:"uniq_id,omitempty"`
+	OperationNote string `protobuf:"bytes,21,opt,name=OperationNote,proto3" json:"OperationNote,omitempty"`
+
+
+    CREATE TABLE `tbl_ping_day` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `ip` varchar(100) DEFAULT NULL,
+  `uniq_id` char(36) DEFAULT NULL,
+  `lid` varchar(100) DEFAULT NULL,
+  `user_name` varchar(100) DEFAULT NULL,
+  `country` varchar(50) DEFAULT NULL,
+  `province` varchar(50) DEFAULT NULL,
+  `city` varchar(50) DEFAULT NULL,
+  `district` varchar(50) DEFAULT NULL,
+  `city_level` tinyint(3) unsigned DEFAULT NULL,
+  `mt` varchar(100) DEFAULT NULL,
+  `mtm` varchar(100) DEFAULT NULL,
+  `os` varchar(100) DEFAULT NULL,
+  `mac` varchar(100) DEFAULT NULL,
+  `ludp_mac` varchar(100) DEFAULT NULL,
+  `lps_did` varchar(500) DEFAULT NULL,
+  `sn` varchar(100) DEFAULT NULL,
+  `sn_hash` varchar(500) DEFAULT NULL,
+  `bit` varchar(50) DEFAULT NULL,
+  `channel` varchar(100) DEFAULT NULL,
+  `version_code` varchar(100) DEFAULT NULL,
+  `client_version` varchar(100) DEFAULT NULL,
+  `create_at` datetime DEFAULT NULL,
+  `day` date DEFAULT NULL,
+  `spec` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `index_tbl_sb_day_sn_ludp_mac` (`day`,`ludp_mac`,`lps_did`),
+  KEY `day_index` (`day`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin AUTO_INCREMENT=1;
+
+
+["10.140.10.9:9092","10.140.10.49:9092","10.140.10.55:9092"]
+["10.140.10.49:2379","10.140.10.55:2379","10.140.10.9:2379"]

@@ -1,8 +1,8 @@
 <!--
  * @Date: 2021-05-10 08:42:32
  * @LastEditors: seven sun 
- * @LastEditTime: 2021-05-12 10:52:04
- * @FilePath: /面试题/mysql/mysql.md
+ * @LastEditTime: 2021-07-14 14:06:25
+ * @FilePath: /interview/mysql/mysql.md
 -->
 
 1. 大表查询数据怎么做优化
@@ -18,3 +18,6 @@
 
 4. 为什么要用b树作索引
 每一次读一次数据拿出来比较一次都是一次io
+
+5. 数据的同步,主要是防止 cpu cpu缓存  内存 磁盘的不一致，因为读取的速度差异很大，
+   所以同步
