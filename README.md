@@ -1,8 +1,8 @@
 <!--
  * @Date: 2021-05-10 17:49:17
  * @LastEditors: seven sun 
- * @LastEditTime: 2021-05-10 19:40:49
- * @FilePath: /面试题/README.md
+ * @LastEditTime: 2021-12-16 14:41:44
+ * @FilePath: /interview/README.md
 -->
 数据结构算法
 链表
@@ -34,12 +34,12 @@ kafka面试
 
 项目经验
 项目架构
-etcd 
 下发策略
-活跃
 长连接弹窗
 
 
+项目部署
+cicd
 docker and k8s
 
 
@@ -49,12 +49,17 @@ map原理
 channel原理
 interface原理
 context原理
+defer 原理
+闭包原理
+
 
 
 分布式面试题
 分布式锁
 分布式事务
 一致性hash算法
+hash负载均衡算法
+
 
 
 

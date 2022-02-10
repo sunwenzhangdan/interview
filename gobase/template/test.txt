@@ -1,0 +1,7 @@
+name 1
+userid 2
+age 2
+sex 1
+
+
+db.antivirusTotalAttackTime.aggregate( [ { $match: {createdAt:{$gt: "2021-10-24",$lt:"2021-11-08" }} }, { $project:{"new_string":{$substr:["$time",0,9]}}} }, {$group:{_id:"$new_string",intercepNumAvg:{$max:"$intercepNum"}}} ]);

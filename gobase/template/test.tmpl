@@ -1,0 +1,8 @@
+package {{.Module}}
+
+type {{.Name}} struct{
+ {{- range $i, $v := .Mc }} 
+    {{$i}} {{$v}} `json:{{$i}}`
+ {{end }}
+}
+

@@ -1,8 +1,8 @@
 /*
  * @Date: 2021-05-12 10:08:07
  * @LastEditors: seven sun
- * @LastEditTime: 2021-05-13 07:42:36
- * @FilePath: /面试题/gobase/context/context_test.go
+ * @LastEditTime: 2021-11-25 16:49:03
+ * @FilePath: /interview/gobase/context/context_test.go
  */
 package contextsun
 
@@ -15,13 +15,12 @@ import (
 )
 
 func TestContext(t *testing.T) {
-	//ceshiAdd()
-	//stopGo()
-	//byConetxt()
-	//b:=returf()
-	//b()
+	// ceshiAdd()
+	// stopGo()
+	// byConetxt()
+	// b:=returf()
+	// b()
 	testClosechannel()
-
 }
 
 func ceshiAdd() {
@@ -40,14 +39,14 @@ func ceshiAdd() {
 	wg.Wait()
 }
 
-//现在我们又有一个需求，我们想主动停下某个工作
+// 现在我们又有一个需求，我们想主动停下某个工作
 func stopGo() {
-	ctx,cancel:=context.WithCancel(context.Background())
-	fmt.Printf("%v",cancel)
+	ctx, cancel := context.WithCancel(context.Background())
+	fmt.Printf("%v", cancel)
 	go func(ctx context.Context) {
 		for {
 			select {
-			case <- ctx.Done():
+			case <-ctx.Done():
 				fmt.Println("收到信号")
 				return
 			default:
@@ -73,44 +72,46 @@ func func1(ctx context.Context) {
 
 type f1 func()
 
-
-func sum(a,b int) int{
-  return a+b;
+func sum(a, b int) int {
+	return a + b
 }
 
-func returf() f1{
-	return func(){
-	    a:=sum(1,3)
-	    fmt.Println(a)
+func returf() f1 {
+	return func() {
+		a := sum(1, 3)
+		fmt.Println(a)
 	}
 }
 
-
-func testClosechannel(){
-	chan1:=make(chan struct{})
-	go func(){
+func testClosechannel() {
+	chan1 := make(chan struct{})
+	go func() {
 		for {
 			select {
-			case <- chan1:
+			case <-chan1:
 				fmt.Println("11111")
 				return
 			default:
-                 fmt.Println("2222")
+				fmt.Println("2222")
 			}
 		}
 	}()
-	go func(){
+	go func() {
 		for {
 			select {
-			case <- chan1:
+			case <-chan1:
 				fmt.Println("33333")
 				return
 			default:
-                fmt.Println("44444")
+				fmt.Println("44444")
 			}
 		}
 	}()
-	time.Sleep(time.Second*2)
+	time.Sleep(time.Second * 2)
 	close(chan1)
-	time.Sleep(time.Second*2)
+	time.Sleep(time.Second * 2)
+}
+
+func hello(ctx context.Context) {
+	
 }
